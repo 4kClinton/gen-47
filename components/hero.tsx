@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-aWlG6XmlbgN50Avczgl1YB9Qbo2bEU.png"
+          src="/hero.jpg"
           alt="Kenyan youth empowerment"
           className="w-full h-full object-cover"
         />

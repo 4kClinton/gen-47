@@ -1,3 +1,6 @@
+"use client"
+
+import Image from "next/image"
 import { Mic, School, Users, Megaphone } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -7,28 +10,28 @@ const programs = [
     description:
       "National conversations on education, politics, parenting, social issues and youth empowerment. Voices from youth, parents, leaders and professionals engage in solution-driven conversations.",
     icon: Mic,
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sp9uW7UAZAZspU8i0kgYW5q94YfbfR.png",
+    image: "/podcast.jpg",
   },
   {
     name: "School Outreach Programs",
     description:
       "Visits and mentorship sessions in schools, focusing on digital literacy, mental health, and career guidance. Building strong role model connections for students.",
     icon: School,
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7kmAn8NaGnukbPU4tBn9SaJmEd2rvd.png",
+    image: "/schoolKids.jpg",
   },
   {
     name: "Parent & Community Dialogues",
     description:
       "Forums that bring parents, teachers, youth and leaders together to bridge communication gaps and strengthen families.",
     icon: Users,
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UXzIcGgiu3xp516hDBSPQV5jaGbLxo.png",
+    image: "/parensKids.jpg",
   },
   {
     name: "Media & Awareness Campaigns",
     description:
       "Using digital media and content creation to raise awareness, amplify youth voices, and showcase community impact.",
     icon: Megaphone,
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2151943975-5aXrUtbBEwiYKDU5Lho090eAKTfdYf.jpg",
+    image: "/microphone.jpg",
   },
 ]
 
@@ -47,12 +50,17 @@ export default function Programs() {
           {programs.map((program, index) => {
             const Icon = program.icon
             return (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={program.image || "/placeholder.svg"}
+                  <Image
+                    src={program.image}
                     alt={program.name}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                    priority
                   />
                   <div className="absolute top-4 left-4 w-14 h-14 bg-sky-500 rounded-full flex items-center justify-center shadow-lg">
                     <Icon className="text-white" size={28} />
